@@ -20,7 +20,7 @@ function addList(){
         let div = document.createElement('div');
         div.innerHTML = `
             <span>${inputField.value}</span>
-            <div>
+            <div class='trashcheck'>
             <input type='checkbox'>
             <i class="fa-solid fa-trash-can fa-xl"></i>
             </div>
