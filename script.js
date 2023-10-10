@@ -1,6 +1,6 @@
-let inputField = document.getElementById('inputField');
+let inputField = document.getElementById('input');
 let addBtn = document.getElementById('addBtn');
-let taskDiv = document.getElementById('taskDiv');
+let taskDiv = document.querySelector('.to-do-items');
 
 function inputFieldLength(){
     return inputField.value.trim().length;
@@ -19,18 +19,19 @@ function addTaskByKeyPress(){
 function addList(){
         let div = document.createElement('div');
         div.innerHTML = `
-            <input type='checkbox'>
             <span>${inputField.value}</span>
+            <div>
+            <input type='checkbox'>
+            <i class="fa-solid fa-trash-can fa-xl"></i>
+            </div>
             `
-        let taskDetails = div.querySelector('.taskDetails');
-        let checkbox = div.querySelector('input[type="checkbox"]');
+        div.classList.add('item');
+        let trashCan = div.querySelector('.fa-trash-can');
         taskDiv.appendChild(div);
         inputField.value = '';
-        checkbox.addEventListener('change', function(){
-            if(checkbox.checked){
-                div.remove();
-            }
-        });
+        trashCan.addEventListener('click', function(){
+            div.remove();
+        })
 }
 
 addBtn.addEventListener('click', addTaskByAddBtn);
