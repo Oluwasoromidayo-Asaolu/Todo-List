@@ -19,20 +19,29 @@ function addTaskByKeyPress(){
 function addList(){
         let div = document.createElement('div');
         div.innerHTML = `
-            <span>${inputField.value}</span>
+            <span class='task'>${inputField.value}</span>
             <div class='trashcheck'>
-            <input type='checkbox'>
+            <input class='checked' type='checkbox'>
             <i class="fa-solid fa-trash-can fa-xl"></i>
             </div>
             `
+
         div.classList.add('item');
         let trashCan = div.querySelector('.fa-trash-can');
         taskDiv.appendChild(div);
         inputField.value = '';
+        saveData();
         trashCan.addEventListener('click', function(){
             div.remove();
         })
 }
 
+function saveData(){
+    localStorage.setItem('data', taskDiv.innerHTML)
+}
+function showTask(){
+    taskDiv.innerHTML = localStorage.getItem('data');
+}
+showTask();
 addBtn.addEventListener('click', addTaskByAddBtn);
 inputField.addEventListener('keypress', addTaskByKeyPress);

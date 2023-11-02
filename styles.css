@@ -32,8 +32,8 @@ body{
     outline: none;
     padding: 8px;
     border: 1px solid lightgray;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     transition: 0.3s ease all;
 }
 .user-input input:focus{
@@ -42,14 +42,14 @@ body{
 }
 .user-input button{
     cursor: pointer;
-    padding: 8px;
+    padding: 8px 9px;
     width: fit-content;
     transition: 1s;
     outline: none;
     background-color: lightgray;
     border: 1px solid lightgray;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .user-input button:hover{
     background-color: transparent;
@@ -111,7 +111,7 @@ input[type="checkbox"]{
 }
 @media(max-width: 480px){
     .user-input input{
-        width: 74%;
+        width: 70%;
     }
 }
 @media(max-width: 320px){
